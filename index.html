@@ -1,0 +1,44 @@
+<head>
+	<title>Joe's Hotdog Stand</title>
+	<style>
+		body{
+			background: #bff8b9;
+			color: #222;
+		}
+	</style>
+</head>
+<body>
+	<h1>Joe's Hotdog Stand</h1>
+	<h2>Your Order:</h2>
+	<script language="javascript">
+		var numHotdogs, numFries, numSodas, subTotal, tax, total;
+		numHotdogs = prompt("How many hotdogs do you want? ", 2);
+		numFries = prompt("How many fries do you want? ", 3);
+		numSodas = prompt("How many sodas do you want? ", 5);
+
+		pHotDogs = (numHotdogs * 3.25);
+		pFries = (numFries * 2.00);
+		pSodas = (numSodas * 1.50);
+
+		document.write(numHotdogs + " Hotdogs at $3.25 for $" + pHotDogs.toFixed(2) + "<br>"); 
+		document.write(numFries + " Fries at $2.00 for $" + pFries.toFixed(2) + "<br>"); 
+		document.write(numSodas + " Sodas at $1.50 for $" + pSodas.toFixed(2) + "<br>"); 
+
+		subTotal = pHotDogs + pFries + pSodas;
+
+		if(subTotal >= 20){
+			document.write("<br>You qualify for our 10% discount!<br>");
+			subTotal = (subTotal * .9);
+		}
+		document.write("<br>")
+
+		document.write("Subtotal: $" + subTotal.toFixed(2) + "<br>");
+
+		tax = (subTotal * 0.0625);
+		total = subTotal + tax;
+
+		document.write("Tax: $" + tax.toFixed(2) + "<br>");
+		document.write("Total: $" + total.toFixed(2) + "<br>");
+
+	</script>
+</body>
